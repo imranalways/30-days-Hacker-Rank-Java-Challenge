@@ -1,0 +1,361 @@
+1,<?php
+$handle = fopen ("php://stdin","r");
+$i = 4;
+$d = 4.0;
+$s = "HackerRank ";
+// Declare second integer, double, and String variables.
+
+// Read and save an integer, double, and String to your variables.
+$n1 = rtrim(fgets(STDIN));
+$n2 = rtrim(fgets(STDIN));
+$s1 = rtrim(fgets(STDIN));
+$n2=$n2+$d;
+// Print the sum of both integer variables on a new line.
+echo $n1+$i;
+echo "\r\n";
+echo sprintf('%0.1f',$n2);
+echo "\r\n";
+echo $s."".$s1; 
+// Print the sum of the double variables on a new line.
+
+// Concatenate and print the String variables on a new line
+// The 's' variable above should be printed first.
+
+fclose($handle);
+
+2.
+<?php
+
+// Complete the solve function below.
+function solve($meal_cost, $tip_percent, $tax_percent) {
+$mcost=$meal_cost;
+$tip=$tip_percent;
+$tax=$tax_percent;
+$tp= $mcost*($tip/100);
+$tx= $mcost*($tax/100);
+$total=$mcost+$tp+$tx;
+
+echo round($total);
+
+}
+
+$stdin = fopen("php://stdin", "r");
+
+fscanf($stdin, "%lf\n", $meal_cost);
+
+fscanf($stdin, "%d\n", $tip_percent);
+
+fscanf($stdin, "%d\n", $tax_percent);
+
+solve($meal_cost, $tip_percent, $tax_percent);
+
+fclose($stdin);
+
+
+
+3.
+<?php
+
+
+
+$stdin = fopen("php://stdin", "r");
+
+fscanf($stdin, "%d\n", $N);
+
+if($N%2==0){
+    if($N>=2 && $N<=5){
+        echo "Not Weird";
+    }
+    else if($N>=6 && $N<=20)
+    {
+        echo "Weird";
+    }
+    else{
+        echo "Not Weird";
+    }
+}
+else{
+    echo "Weird";
+}
+fclose($stdin);
+
+
+4.
+
+import java.io.*;
+import java.util.*;
+
+public class Person {
+    private int age;	
+  
+	public Person(int initialAge) {
+  		// Add some more code to run some checks on initialAge
+          age=initialAge;
+          if(age<0){
+              age=0;
+              System.out.println("Age is not valid, setting age to 0.");
+          }
+	}
+
+	public void amIOld() {
+  		// Write code determining if this person's age is old and print the correct statement:
+          if(age<13){
+            System.out.println("You are young.");
+	    }
+        else if(age>=13 && age<18){
+            System.out.println("You are a teenager.");
+        }
+        else{
+           System.out.println("You are old."); 
+        }
+    }
+
+	public void yearPasses() {
+  		age+=1;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for (int i = 0; i < T; i++) {
+			int age = sc.nextInt();
+			Person p = new Person(age);
+			p.amIOld();
+			for (int j = 0; j < 3; j++) {
+				p.yearPasses();
+			}
+			p.amIOld();
+			System.out.println();
+        }
+		sc.close();
+    }
+}
+
+
+5.
+
+<?php
+
+
+
+$stdin = fopen("php://stdin", "r");
+
+fscanf($stdin, "%d\n", $n);
+
+for($i=1;$i<=10;$i++){
+
+    echo $n." x ".$i ." = ". $n*$i."\n";
+}
+fclose($stdin);
+
+6.
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Solution {
+
+   
+  
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        String str1;
+        
+        Scanner scan= new Scanner(System.in);
+        int T=scan.nextInt();
+        for(int i=0;i<=T;i++){
+        str1=scan.nextLine();
+        String s=str1;
+       
+        
+         String s2="";
+    for(int j=0;j<s.length();j++){
+            
+            if(j%2==0){
+                System.out.print(s.charAt(j));
+            }
+            else{
+                String s1=String.valueOf(s.charAt(j));
+               
+                s2= s2+s1;
+              
+              }
+              if(j==s.length()-1){
+                  System.out.print(" "+s2);
+                  System.out.println();
+              } 
+            }
+             
+        }
+        
+    }
+}
+
+
+7.
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int[] arr = new int[n];
+
+        String[] arrItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < n; i++) {
+            int arrItem = Integer.parseInt(arrItems[i]);
+            arr[i] = arrItem;
+        }
+
+        for(int j=n-1;j>=0;j--){
+            System.out.print(arr[j]+" ");
+        }
+        scanner.close();
+    }
+}
+
+
+8.
+//Complete this code or write your own from scratch
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Dictionary mydict = new Hashtable();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        for(int i = 0; i < n; i++){
+            String name = in.next();
+            int phone = in.nextInt();
+            // Write code here
+            mydict.put(name,phone);
+        }
+        while(in.hasNext()){
+            String s = in.next();
+            if(mydict.get(s)==null){
+                System.out.println("Not found");
+            }
+            else{
+                System.out.println(s+"="+mydict.get(s));
+            }
+           
+        }
+        in.close();
+    }
+}
+
+9.
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the factorial function below.
+    static int factorial(int n) {
+       
+        int x=1;
+        while(n>1){
+        x=x*n;
+        
+        n--;
+    }
+        
+       return x;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int result = factorial(n);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}
+
+10.
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        int div=n;
+        int count=0;
+        int Hcount=0;
+        while(div>0){
+            n=div%2;
+            div=div/2;
+            
+            if(n==1){
+                count=count+1;
+            }
+            
+            else{
+                if(count!=0){
+                if(Hcount<=count){
+                Hcount=count;
+               
+                }
+                 count=0;
+            }
+            }
+
+        }
+        if(Hcount>=count){
+        System.out.print(Hcount);
+        }
+        else{
+           System.out.print(count); 
+        }
+        scanner.close();
+    }
+}
+
